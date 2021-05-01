@@ -29,7 +29,7 @@ LANGUAGES = (
     ('zh-hans', _('Chinese')),
 )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['138.49.101.88']
 # CACHES = {
 #     "default": {
 #         "BACKEND": "django_redis.cache.RedisCache",
@@ -127,8 +127,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django',
         'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'Wyxshigou13?',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }
