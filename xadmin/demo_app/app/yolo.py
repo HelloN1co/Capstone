@@ -210,7 +210,7 @@ class YOLO(object):
         fontPath = os.getcwd() + "/app/" + 'font/Menlo-Regular.ttf'
         font = ImageFont.truetype(font=fontPath,
                                   size=np.floor(1.5e-2 * image.size[1] + 0.1).astype('int32'))
-        thickness = (image.size[0] + image.size[1]) // 600
+        thickness = (image.size[0] + image.size[1]) // 800
 
         for i, c in list(enumerate(out_classes)):
             predicted_class = self.class_names[c]
@@ -244,15 +244,11 @@ class YOLO(object):
                 draw.rectangle(
                     [left + i, top + i, right - i, bottom - i],
                     outline=self.colors[c])
-                # draw.rectangle(
-                #     [left + i, top + i, right - i, bottom - i],
-                #     outline='#41E1E6')
+
             draw.rectangle(
                 [tuple(text_origin), tuple(text_origin + label_size)],
                 fill=self.colors[c])
-            # draw.rectangle(
-            #     [tuple(text_origin), tuple(text_origin + label_size)],
-            #     fill='#41E1E6')
+
             draw.text(text_origin, str(label, 'UTF-8'), fill=(0, 0, 0), font=font)
             del draw
 
@@ -323,9 +319,11 @@ def check_video(yolo, video_path, output_path=""):
         return_value, frame = vid.read()
         if return_value == False:
             break
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         image = Image.fromarray(frame)
         image = yolo.detect_image(image)
         result = np.asarray(image)
+        result = cv2.cvtColor(result, cv2.COLOR_RGB2BGR)
         curr_time = timer()
         exec_time = curr_time - prev_time
         prev_time = curr_time
