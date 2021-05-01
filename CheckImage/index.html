@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+	<title>Index</title>
+	<meta charset="utf-8">
+	<!-- bootstrap vs fontawesome-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+	<link rel="icon" href="img/favicon.png" type="image/x-icon"/>
+	<link rel="stylesheet" type="text/css" href="css/style-about.css">
+	<link rel="stylesheet" type="text/css" href="css/style-res-about.css">
+	<link rel="stylesheet" type="text/css" href="css/style-faq.css">
+	<link rel="stylesheet" type="text/css" href="css/style-login.css">
+	<link rel="stylesheet" type="text/css" href="css/style-fix-nav.css">
+	<link rel="stylesheet" type="text/css" href="css/style-form-search-mobile.css">
+		<!-- slick -->
+	
+	<!-- GG FONT -->
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/fontawesome.css" >
+<style>
+	.info-text{
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 1s;
+	}
+	.info-hover:hover .info-text{
+		visibility: visible;
+		padding: 5px;
+		background-color: #2a2a2a;
+		color: white;
+		font-size: 12px;
+		border-radius:5px;
+		opacity: 0.8;
+	}
+</style>
+</head>
+<body>
+
+    
+<header class="container" id="header-v3">
+	
+		<div class="row">
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 logo"><img src="img/logo.png" alt="img-holiwood"></div>
+			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 menu-mobile">
+				<div class=" collapse navbar-collapse" id="myNavbar">
+
+				<form class="hidden-lg hidden-md form-group form-search-mobile">
+					<input type="text" name="search" placeholder="Search here..." class="form-control">
+					<button type="submit"><img src="img/Search.png" alt="search" class="img-responsive"></button>
+				</form>
+
+					<!-- <ul class="nav navbar-nav menu-main">
+						<li class="wedding-menu"><a href="home.html">Home</a><figure id="home-1" class=" hidden-sm hidden-md hidden-xs"></figure></li>
+						<li class="wedding-menu"><a href="history.html">History</a><figure id="shopping-1" class=" hidden-sm hidden-md hidden-xs"></figure></li>
+						<li class="wedding-menu"><a href="collect.html">Collect</a>
+							<figure id="shopping-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+						</li>
+						<li class="wedding-menu"><a href="center.html">Center</a><figure id="cart-1" class=" hidden-sm hidden-md hidden-xs"></figure></li>
+					</ul> -->
+				</div>
+			</div>
+		</div>
+		
+</header>
+<main>
+	<div class="banner">
+		<div class="container">
+			<figure id="banner-about"><img src="img/banner-about.jpg" class="img-responsive" alt="img-holiwood"></figure>
+		<div class="title-banner">
+			<h1>Login/Register</h1>
+		</div>
+		
+		</div>
+		
+	</div>
+<div class="container container-ver2">
+            <div class="page-login box space-50">
+                <div class="row">
+                    <div class="col-md-6 sign-in space-30">
+                        <h3 style="align-items: start;display: flex;height: 40px"> Login<div class="info-hover"  style="align-items: start;display: flex;">
+							<div style="display: inline-block;margin-bottom: -100px">
+								<img style="padding-left: 5px" src="img/info_icon.png"></div>
+							<div class="info-text" style="display: inline-block"><span style="text-transform: none">This system is used for detecting cars, trucks, pedestrians, bikers and traffic lights<br> in images and videos.</span></div> </div></h3>
+
+                        <!-- End social -->
+                        <div class="form-horizontal">
+                            <div class="group box space-20">
+                                <label class="control-label" for="email2">Email *</label>
+                                <input class="form-control" type="text" placeholder="Please enter your email address" id="email2">
+                            </div>
+                            <div class="group box">
+                                <label class="control-label" for="pwd2">Password *</label>
+                                <input class="form-control" type="password" placeholder="Please enter your password" id="pwd2">
+                            </div>
+
+                            <button style="margin-top: 30px" type="submit" onclick="login()" class="link-v1 rt">Login</button>
+                        </div>
+                        <!-- End form -->
+                    </div>
+                    <!-- End col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="register box space-50">
+                            <h3 style="height: 40px">Sign up for a new account</h3>
+                            <div class="form-horizontal">
+                                <div class="group box space-20">
+                                    <label class="control-label" for="email">Email *</label>
+                                    <input class="form-control" type="text" placeholder="Please enter your email address" id="email">
+                                </div>
+								<div class="group box space-20">
+									<input id="vcode" class="form-control" placeholder="Please enter your verification code" name="v"></input>
+									<button onclick="getVerifyCode();" style="margin-top: 10px;">Get Code</button>
+								</div>
+								<div class="group box">
+									<label class="control-label" for="pwd">Password *</label>
+									<input class="form-control" type="password" placeholder="Please enter your password" id="pwd">
+								</div>
+								<div class="group box">
+									<label class="control-label" for="confPwd">Confirm password *</label>
+									<input class="form-control" type="password" placeholder="Please enter your password again" id="confPwd">
+								</div>
+								
+                                <button style="margin-top: 30px" type="submit" onclick="register()" class="link-v1 rt">Register</button>
+                            </div>
+                        </div>
+                        <!-- End register -->
+                    </div>
+                    <!-- End col-md-6 -->
+                </div>
+            </div>
+        </div>
+</main>
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 logo-footer">
+				<div class="logo-bot"></div>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 copy">
+				<span>Copyright</span><i class="far fa-copyright"></i><span class="engo">2021 by Peng&Li</span>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gmail-footer">
+				<span id="gmail-footer"><br href="#">Email: peng6116@uwlax.edu</br>li4664@uwlax.edu</span>
+			</div>
+		</div>
+	</div>
+	<div class="hidden-lg hidden-md back-to-top fade"><i class="fas fa-caret-up"></i></div>
+	<div class="BG-menu"></div>
+</footer>
+
+<!-- boostrap & jquery -->
+	<script src="js/jquery-3.5.1.js"></script>
+	<script src="js/bootstrap.min_0028.js"></script>
+	
+	<!-- js file -->
+	<script src="js/function-back-top.js"></script>
+	<script src="js/function-sidebar.js"></script>
+	<script src="js/funtion-header-v3.js"></script>
+	<script src="js/function-search-v2.js"></script>
+	<script>
+		
+	
+		var code = "";
+		function isEmpty(obj) {
+			if (typeof obj == "undefined" || obj == null || obj == "") {
+				return true;
+			} else {
+				return false;
+			}
+		}
+			
+		function getVerifyCode() {
+			var email = $('#email').val();
+			if (isEmpty(email)) {
+				alert("Email address cannot be empty.")
+				return;
+			}
+			var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+			if (!myreg.test(email)) {
+				alert('Please enter a valid email address!');
+				myreg.focus();
+				return;
+			}
+			var url = "http://127.0.0.1:8000/getVerifyCode/";
+			var data = {
+					username: email
+				};
+			$.ajax({
+					url: url,
+					type: "post",
+					data: data,
+					dataType: 'json',
+					success: (res) => {
+						code = res.data
+						alert("Verification code has been sent to your email address.");
+					},
+					error: (err) => {
+						alert("Failed to obtain verification code.");
+					}
+				});
+		}
+			
+		function register() {
+			var email = $('#email').val();
+			var vcode = $('#vcode').val();
+			var pwd = $('#pwd').val();
+			var cnpwd = $('#confPwd').val();
+			if (isEmpty(code)) {
+				alert("Please get the verification code first.")
+				return;
+			}
+			if (isEmpty(email)) {
+				alert("Email address cannot be empty.")
+				return;
+			}
+			if (isEmpty(vcode)) {
+				alert("Verification code cannot be empty.")
+				return;
+			}
+			
+			if (isEmpty(pwd)) {
+				alert("Password cannot be empty.")
+				return;
+			}
+			
+			if (isEmpty(cnpwd)) {
+				alert("Confirm password cannot be empty.")
+				return;
+			}
+
+			if (pwd.length < 6 || cnpwd.length < 6) {
+				alert("Password must greater than 6 digits.")
+				return;
+			}
+			
+			if(code != vcode){
+				alert("Wrong verification code.")
+				return;
+			}
+			
+			if(pwd != cnpwd){
+				alert("The two passwords are inconsistent.")
+				return;
+			}
+			var url = "http://127.0.0.1:8000/register/";
+			var data = {
+					username: email,
+					password: pwd
+				};
+			$.ajax({
+					url: url,
+					type: "post",
+					data: data,
+					dataType: 'json',
+					success: (res) => {
+						if (res.code == 200){
+							alert("Register successfully.");
+							$('#email').val('');
+							$('#vcode').val('');
+							$('#pwd').val('');
+							$('#confPwd').val('');
+						}else if(res.code == 300){
+							alert("Email address has been used.");
+						}else{
+							alert("Register failed.");
+						}
+					},
+					error: (err) => {
+						alert("Register failed.");
+					}
+				});
+		}
+		
+		function login() {
+			var email = $('#email2').val();
+			var pwd = $('#pwd2').val();
+			if (isEmpty(email)) {
+				alert("Email address cannot be empty.")
+				return;
+			}
+			
+			if (isEmpty(pwd)) {
+				alert("Password cannot be empty.")
+				return;
+			}
+			$.post("login", {
+					username: email,
+					password: pwd
+				},
+				function(data) {
+					alert("Data Loaded: " + data);
+					$(".result").html(data);
+				});
+				var url = "http://127.0.0.1:8000/login/";
+				var data = {
+						username: email,
+						password: pwd
+					};
+				$.ajax({
+						url: url,
+						type: "post",
+						data: data,
+						dataType: 'json',
+						success: (res) => {
+							if (res.code == 200){
+								console.log(res)
+								sessionStorage.setItem('mid', res.data);
+								sessionStorage.setItem('email', res.email);
+
+								alert("Login successfully.");
+								window.location.href="home.html"
+							}else{
+								alert("Wrong email address or password.");
+							}
+						},
+						error: (err) => {
+							alert("Login failed.");
+						}
+					});
+		}
+	</script>
+</body>
+</html>

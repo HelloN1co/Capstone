@@ -1,0 +1,11 @@
+truck
+car
+pedestrian
+trafficLight-Red
+trafficLight-RedLeft
+biker
+trafficLight
+trafficLight-Green
+trafficLight-GreenLeft
+trafficLight-YellowLeft
+trafficLight-Yellow

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Personal Center</title>
+		<meta charset="utf-8">
+		<!-- bootstrap vs fontawesome-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="icon" href="img/favicon.png" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/style-contact.css">
+		<link rel="stylesheet" type="text/css" href="css/style-res-contact.css">
+		<link rel="stylesheet" type="text/css" href="css/style-fix-nav.css">
+		<link rel="stylesheet" type="text/css" href="css/style-form-search-mobile.css">
+		<!-- slick -->
+
+		<!-- GG FONT -->
+		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+		<link rel="stylesheet" href="css/fontawesome.css">
+		<script>
+			if(!sessionStorage.getItem('mid')) {
+				window.location.href = 'index.html'
+				alert("Please login first.")
+			}
+		</script>
+
+		<style>
+			.submitbutton {
+  				background: #222;
+  				color: #fff;
+  				border-color: #222;
+  				width: 130px;
+  				padding: 0 25px;
+  				line-height: 48px;
+  				font: 700 16px/38px "Abril Fatface";
+  				text-align: center;
+  				display: inline-block;
+  				transition: all .3s ease;
+  				border: 1px solid #222; }
+  				.submitbutton:hover {
+    				text-decoration: none;
+    				background: #fff;
+    				color: #222; }
+		</style>
+	</head>
+	<body>
+
+
+		<header class="container" id="header-v3">
+
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 logo"><img src="img/logo.png" alt="img-holiwood"></div>
+				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 menu-mobile">
+					<div class=" collapse navbar-collapse" id="myNavbar">
+
+						<ul class="nav navbar-nav menu-main">
+							<li class="wedding-menu"><a href="home.html">Home</a>
+								<figure id="home-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+							</li>
+							<li class="wedding-menu"><a href="history.html">History</a>
+								<figure id="shopping-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+							</li>
+							<li class="wedding-menu"><a href="collect.html">Collection</a>
+								<figure id="shopping-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+							</li>
+							<li class="wedding-menu"><a href="center.html">Personal Center</a>
+								<figure id="cart-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-10 col-xs-9">
+					<ul class="nav navbar-nav navbar-right">
+						<li id="input-search" class="hidden-sm hidden-xs" style="margin-top: 17px;">
+							<div id="tbEmail" style="margin-top: 15px;margin-right: 10px"></div>
+						</li>
+						<a href="index.html"><button style="margin-top: 20px" type="submit" onclick="function logout() {
+							sessionStorage.removeItem('mid');
+							sessionStorage.removeItem('email');
+						}
+						logout()" class="submitbutton">Logout</button></a>
+					</ul>
+				</div>
+				<div class="navbar-header mobile-menu">
+					<button type="button" class="navbar-toggle btn-menu-mobile" data-toggle="collapse" data-target="#myNavbar">
+						<i class="fas fa-bars"></i>
+					</button>
+				</div>
+			</div>
+
+		</header>
+		<main>
+			<div class="banner">
+				<div class="container">
+					<figure id="banner-about"><img src="img/banner-about.jpg" class="img-responsive" alt="img-holiwood"></figure>
+					<div class="title-banner">
+						<h1>Personal Center</h1>
+					</div>
+				</div>
+
+			</div>
+			<div class="img-link">
+				<div class="container" style="margin-top: -90px">
+					<div class="row" id="schools">
+						<div class="register box space-50">
+							<div class="col-md-6 sign-in space-30">
+                            <h3>Change Password</h3>
+
+                            <div class="form-horizontal">
+               
+								<div class="group box">
+									<label class="control-label" for="pwd">Password *</label>
+									<input class="form-control" type="password" placeholder="Please enter your password" id="pwd">
+								</div>
+								<div class="group box">
+									<label class="control-label" for="confPwd">Confirm password *</label>
+									<input class="form-control" type="password" placeholder="Please enter your password again" id="confPwd">
+								</div>
+								
+                                <button style="margin-top: 30px" type="submit" onclick="changePwd()" class="submitbutton">Submit</button>
+                            </div>
+                        </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+
+		</main>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 logo-footer">
+						<div class="logo-bot"></div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 copy">
+						<span>Copyright</span><i class="far fa-copyright"></i><span class="engo">2021 by Peng&Li</span>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gmail-footer">
+						<span id="gmail-footer"><br href="#">Email: peng6116@uwlax.edu</br>li4664@uwlax.edu</span>
+					</div>
+				</div>
+			</div>
+			<div class="hidden-lg hidden-md back-to-top fade"><i class="fas fa-caret-up"></i></div>
+			<div class="BG-menu"></div>
+		</footer>
+
+		<!-- boostrap & jquery -->
+		<script src="js/jquery.min_af.js"></script>
+		<script src="js/bootstrap.min_0028.js"></script>
+
+		<!-- js file -->
+		<script src="js/function-map.js"></script>
+		<script src="http://ditu.google.cn/maps/api/js?key=AIzaSyBnMr64OtHBrpxBLLbYX2K2Waf4enq8sp0&callback"></script>
+		<script src="js/function-back-top.js"></script>
+		<script src="js/function-sidebar.js"></script>
+		<script src="js/funtion-header-v3.js"></script>
+		<script src="js/function-search-v2.js"></script>
+		<script>
+			var email = sessionStorage.getItem('email');
+			$("#tbEmail").html(email);
+			function isEmpty(obj) {
+				if (typeof obj == "undefined" || obj == null || obj == "") {
+					return true;
+				} else {
+					return false;
+				}
+			}
+			function changePwd(){
+				var mid = sessionStorage.getItem('mid');
+				var pwd = $('#pwd').val();
+				var cnpwd = $('#confPwd').val();
+				if (isEmpty(pwd)) {
+					alert("Password cannot be empty.")
+					return;
+				}
+				
+				if (isEmpty(cnpwd)) {
+					alert("Confirm password cannot be empty.")
+					return;
+				}
+
+				if (pwd.length < 6 || cnpwd.length < 6) {
+					alert("Password must greater than 6 digits.")
+					return;
+				}
+				if(pwd != cnpwd){
+					alert("The two passwords are inconsistent.")
+					return;
+				}
+				var url = "http://127.0.0.1:8000/changePwd/";
+				var dt = {
+					password: pwd,
+					mid: mid
+				};
+				$.ajax({
+					url: url,
+					type: "post",
+					data: dt,
+					success: (res) => {
+						console.log('ok');
+						if (res.code == 200) {
+							alert("Password changed successfully.");
+						} else {
+							alert("Failed to modify password.");
+						}
+					},
+					error: (err) => {
+						alert("Failed to modify password.");
+					}
+				});
+			}
+		</script>
+	</body>
+</html>

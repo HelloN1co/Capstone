@@ -1,0 +1,248 @@
+/*------------------------------------
+    [Table of contents]
+    1. Body
+    2. Header / #header
+    3. Navigation / #navbar
+    4. Content / #content
+    5. Sidebar / #sidebar
+    6. Search / #search
+    7. Footer / #footer
+    
+--------------------------------------*/
+.space-padding-tb-30 {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important; }
+
+.cart-box-container .col-md-4 {
+  padding-right: 0px; }
+  .cart-box-container .col-md-4:last-child {
+    padding-right: 15px; }
+
+.head-cart .item {
+  border: 1px solid #ebebeb;
+  padding: 60px 0px; }
+  .head-cart .item.active .icon {
+    background: #222;
+    color: #fff;
+    border-color: #222; }
+  .head-cart .item .icon {
+    font: 400 22px/64px "Poppins";
+    display: inline-block;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    border: 1px solid #c2c2c2;
+    background: #fff;
+    color: #565656; }
+  .head-cart .item h3 {
+    font: 400 24px/30px "Poppins";
+    color: #565656;
+    text-transform: uppercase;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative; }
+    .head-cart .item h3:after {
+      position: absolute;
+      content: '';
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      margin: auto;
+      height: 1px;
+      width: 75px;
+      background: #222; }
+
+.center {
+  text-align: center; }
+
+.title-brand {
+  color: #222;
+  font: 700 30px "Poppins";
+  margin-bottom: 15px; }
+
+.form-horizontal .col-md-6:nth-child(2n+1) {
+  padding-left: 0px;
+  padding-right: 10px; }
+.form-horizontal .col-md-6:nth-child(2n) {
+  padding-right: 0px !important;
+  padding-left: 10px; }
+.form-horizontal .form-group {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0px; }
+  .form-horizontal .form-group.col-md-6 {
+    padding-right: 10px; }
+
+.check-out {
+  margin-bottom: 50px; }
+  .check-out .form-horizontal label.control-label {
+    font: 700 16px/20px "Poppins";
+    color: #2b2b2b;
+    text-transform: uppercase; }
+    .check-out .form-horizontal label.control-label .color {
+      color: #fd0000; }
+  .check-out .form-horizontal .form-control {
+    border-color: #e5e5e5;
+    box-shadow: none;
+    font-size: 16px;
+    font-family: "Poppins";
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    color: #888888;
+    padding: 9px 20px;
+    line-height: 1.625;
+    height: 47px;
+    display: block;
+    width: 100%;
+    font: 400 16px "Poppins";
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s; }
+  .check-out .form-check {
+    display: inline-block;
+    font: 400 14px/20px "Poppins";
+    color: #000000;
+    padding-left: 25px;
+    cursor: pointer;
+    margin-right: 25px;
+    position: relative; }
+    .check-out .form-check .checkmark {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+      border: 1px solid #b5b5b5;
+      background-color: #fff; }
+    .check-out .form-check input[type="checkbox"] {
+      opacity: 0;
+      position: absolute; }
+      .check-out .form-check input[type="checkbox"]:checked + .checkmark:before {
+        padding-left: 3px;
+        content: "\2713" !important;
+        font-size: 15px;
+        color: #333;
+        text-align: center;
+        display: inline-block; }
+
+.space-20 {
+  margin-bottom: 20px !important; }
+
+.space-50 {
+  margin-bottom: 50px !important; }
+
+.info-order .product-name {
+  text-align: left; }
+  .info-order .product-name .name {
+    font: 400 16px/50px "Poppins";
+    color: #a7a7a7;
+    float: left;
+    width: 300px; }
+  .info-order .product-name .qty {
+    font: 400 16px/50px "Poppins";
+    color: #a7a7a7; }
+  .info-order .product-name .total {
+    font: 400 16px/50px "Poppins";
+    float: right;
+    color: #a7a7a7;
+    text-align: right; }
+  .info-order .product-name ul {
+    margin: 0;
+    padding: 0; }
+    .info-order .product-name ul .head {
+      border-bottom: 1px solid #e6e6e6; }
+      .info-order .product-name ul .head .name {
+        font: 700 16px/50px "Poppins";
+        color: #565656;
+        text-transform: uppercase;
+        float: left;
+        width: 300px; }
+      .info-order .product-name ul .head .qty {
+        font: 400 16px/50px "Poppins";
+        color: #565656; }
+      .info-order .product-name ul .head .total {
+        font: 400 16px/50px "Poppins";
+        float: right;
+        color: #565656;
+        text-align: right; }
+    .info-order .product-name ul li {
+      display: block;
+      float: left;
+      width: 100%;
+      line-height: 50px;
+      list-style-type: none; }
+.info-order .product-order {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  width: 100%;
+  float: left;
+  padding-left: 0; }
+  .info-order .product-order li {
+    border-top: 1px solid #e6e6e6;
+    display: block;
+    float: left;
+    width: 100%;
+    line-height: 50px; }
+  .info-order .product-order .left {
+    font: 700 16px "Poppins";
+    color: #565656;
+    text-transform: uppercase;
+    float: left;
+    line-height: 50px; }
+  .info-order .product-order .right {
+    float: right;
+    font: 400 16px/50px "Poppins";
+    text-transform: uppercase; }
+
+.payment-order ul.tabs li {
+  padding: 20px 0px 20px 20px;
+  list-style: none;
+  position: relative; }
+  .payment-order ul.tabs li.active i {
+    background: #222; }
+  .payment-order ul.tabs li i {
+    width: 12px;
+    height: 12px;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    left: 0px;
+    top: 32px;
+    text-align: center;
+    display: inline-block;
+    border: 1px solid #ddd; }
+  .payment-order ul.tabs li h4 {
+    font: 600 18px/20px "Poppins";
+    color: #000; }
+  .payment-order ul.tabs li p {
+    color: #9d9d9d;
+    font: 400 12px/20px "Poppins";
+    margin-top: 10px; }
+  .payment-order ul.tabs li a {
+    font: 400 12px/20px "Poppins";
+    color: #e95252;
+    margin-top: 20px !important;
+    display: inline-block;
+    height: auto !important; }
+
+.link-v1.rt {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+  width: 100%;
+  padding: 0 25px;
+  line-height: 48px;
+  font: 700 16px/38px "Abril Fatface";
+  text-align: center;
+  display: inline-block;
+  transition: all .3s ease;
+  border: 1px solid #222; }
+  .link-v1.rt:hover {
+    text-decoration: none;
+    background: #fff;
+    color: #222; }
+
+/*# sourceMappingURL=style-checkout.css.map */

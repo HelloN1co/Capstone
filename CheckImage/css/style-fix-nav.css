@@ -1,0 +1,55 @@
+/*------------------------------------
+  [Table of contents]
+  1. Body
+  2. Header / #header
+  3. Navigation / #navbar
+  4. Content / #content
+  5. Sidebar / #sidebar
+  6. Search / #search
+  7. Footer / #footer
+  
+--------------------------------------*/
+@media (max-width: 991px) {
+  .nav > li {
+    position: unset; }
+
+  .navbar-header {
+    float: none; }
+
+  .navbar-toggle {
+    display: block; }
+
+  .navbar-collapse {
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+
+  .navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px; }
+
+  .navbar-collapse.collapse {
+    display: block !important; }
+
+  .navbar-nav > li {
+    float: none; }
+
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+
+  .collapse.in {
+    display: block !important;
+    overflow-y: auto !important; }
+
+  .navbar-nav .open .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: block !important; } }
+
+/*# sourceMappingURL=style-fix-nav.css.map */

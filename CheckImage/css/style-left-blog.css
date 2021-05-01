@@ -1,0 +1,21 @@
+/*------------------------------------
+	[Table of contents]
+	1. Body
+	2. Header / #header
+	3. Navigation / #navbar
+	4. Content / #content
+	5. Sidebar / #sidebar
+	6. Search / #search
+	7. Footer / #footer
+	
+--------------------------------------*/
+.sidebar {
+  clear: left; }
+
+.content form input {
+  width: 100%; }
+.content form button {
+  left: unset;
+  right: 20px; }
+
+/*# sourceMappingURL=style-left-blog.css.map */

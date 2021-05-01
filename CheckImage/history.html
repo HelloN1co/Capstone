@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>History</title>
+		<meta charset="utf-8">
+		<!-- bootstrap vs fontawesome-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="icon" href="img/favicon.png" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/style-shop.css">
+		<link rel="stylesheet" type="text/css" href="css/style-left-blog.css">
+		<link rel="stylesheet" type="text/css" href="css/style-res-shop.css">
+		<link rel="stylesheet" type="text/css" href="css/style-fix-nav.css">
+		<link rel="stylesheet" type="text/css" href="css/style-form-search-mobile.css">
+		<!-- slick -->
+
+		<!-- GG FONT -->
+		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+		<link rel="stylesheet" href="css/fontawesome.css">
+
+		<link rel="stylesheet" href="css/viewer.min.css">
+		<!-- PERSONAL STYLE -->
+		<link rel="stylesheet" type="text/css" href="css/MyPaging.css">
+
+		<script src="js/jquery-3.5.1.js"></script>
+		<script src="js/MyPaging.js"></script>
+		<script src="js/viewer.min.js"></script>
+		<script>
+			if(!sessionStorage.getItem('mid')) {
+				window.location.href = 'index.html'
+				alert("Please login first.")
+			}
+		</script>
+		<style>
+			.main {
+				margin: 0 auto;
+				padding: 50px 0;
+				width: 1000px;
+			}
+			
+			table {
+				margin-bottom: 20px;
+				width: 100%;
+				border-collapse: collapse;
+				border: none;
+			}
+			
+			table th, table td {
+				padding: 5px 10px;
+				border-color: #999;
+			}
+		
+			#jq22 {
+				width: 700px;
+				margin: 0 auto;
+				font-size: 0;
+			}
+		
+			#jq22 li {
+				display: inline-block;
+				width: 32%;
+				margin-left: 1%;
+				padding-top: 1%;
+			}
+		
+			#jq22 li img {
+				width: 100%;
+			}
+
+			.btn {
+			padding: 7px 18px;
+			background: #40AFFE;
+			color: #FFFFFF;
+			border-radius: 5px;
+			}
+		
+			.btns {
+				position: relative;
+				z-index: 0;
+				width: 700px;
+				margin: 0 auto;
+				text-align: center;
+			}
+		
+			.btns a {
+				display: inline-block;
+				width: 70px;
+				margin-top: 15px;
+				line-height: 26px;
+				font-size: 12px;
+				color: #fff;
+				background-color: #21b384;
+				text-decoration: none;
+			}
+		
+			.btns a:hover {
+				background-color: #1fa67a;
+			}
+
+			.submitbutton {
+  				background: #222;
+  				color: #fff;
+  				border-color: #222;
+  				width: 130px;
+  				padding: 0 25px;
+  				line-height: 48px;
+  				font: 700 16px/38px "Abril Fatface";
+  				text-align: center;
+  				display: inline-block;
+  				transition: all .3s ease;
+  				border: 1px solid #222; }
+  				.submitbutton:hover {
+    				text-decoration: none;
+    				background: #fff;
+    				color: #222; }
+		</style>
+	</head>
+	<body>
+
+
+		<header class="container" id="header-v3">
+
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 logo"><img src="img/logo.png" alt="img-holiwood"></div>
+				<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 menu-mobile">
+					<div class=" collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav menu-main">
+							<li class="wedding-menu"><a href="home.html">Home</a>
+								<figure id="home-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+							</li>
+							<li class="wedding-menu"><a href="history.html">History</a>
+								<figure id="shopping-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+							</li>
+							<li class="wedding-menu"><a href="collect.html">Collection</a>
+								<figure id="shopping-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+							</li>
+							<li class="wedding-menu"><a href="center.html">Personal Center</a>
+								<figure id="cart-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-10 col-xs-9">
+					<ul class="nav navbar-nav navbar-right">
+						<li id="input-search" class="hidden-sm hidden-xs" style="margin-top: 17px;">
+							<div id="tbEmail" style="margin-top: 15px;margin-right: 10px"></div>
+						</li>
+						<a href="index.html"><button style="margin-top: 20px" type="submit" onclick="function logout() {
+							sessionStorage.removeItem('mid');
+							sessionStorage.removeItem('email');
+						}
+						logout()" class="submitbutton">Logout</button></a>
+					</ul>
+				</div>
+				<div class="navbar-header mobile-menu">
+					<button type="button" class="navbar-toggle btn-menu-mobile" data-toggle="collapse" data-target="#myNavbar">
+						<i class="fas fa-bars"></i>
+					</button>
+				</div>
+			</div>
+
+		</header>
+		<main>
+			<div class="container content">
+				<div class="btns">
+					<label>Date: </label>
+					<select id="times">
+
+					</select>
+					<button class="submitbutton" onclick="getData2();" style="width: 70px;height: 35px;margin-left:20px;">Go</button>
+				</div>
+				<div class="main">
+
+					<table border>
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Item</th>
+								<th>Name</th>
+								<th>Manage</th>
+							</tr>
+						</thead>
+						<tbody class="tbody">
+							
+						</tbody>
+					</table>
+					<button class="submitbutton" onclick="downloadAll();" style="width: 160px;height: 35px;">Download All</button>
+					<button class="submitbutton" onclick="deleteAllHistory();" style="width: 160px;height: 35px;margin-left:10px;">Delete All</button>
+					<div class="box2" style="margin-top: 10px;"></div>
+				</div>
+				<div style="margin-bottom: 70px;">
+					<ul id="jq22" style="display: none;">
+
+					</ul>
+
+					<div class="btns" style="display: none;">
+						<a id="btn1" href="javascript:">show()</a>
+						<a id="btn2" href="javascript:">hide()</a>
+						<a id="btn3" href="javascript:">view()</a>
+						<a id="btn4" href="javascript:">next()</a>
+						<a id="btn5" href="javascript:">prev()</a>
+						<a id="btn6" href="javascript:">move()</a>
+						<a id="btn7" href="javascript:">moveTo()</a>
+						<a id="btn8" href="javascript:">zoom()</a>
+						<a id="btn9" href="javascript:">zoomTo()</a>
+						<a id="btn10" href="javascript:">rotate()</a>
+						<a id="btn11" href="javascript:">rotateTo()</a>
+						<a id="btn12" href="javascript:">scale()</a>
+						<a id="btn13" href="javascript:">scaleX()</a>
+						<a id="btn14" href="javascript:">scaleY()</a>
+						<a id="btn15" href="javascript:">play()</a>
+						<a id="btn16" href="javascript:">stop()</a>
+						<a id="btn17" href="javascript:">full()</a>
+						<a id="btn18" href="javascript:">exit()</a>
+						<a id="btn19" href="javascript:">tooltip()</a>
+						<a id="btn20" href="javascript:">toggle()</a>
+						<a id="btn21" href="javascript:">reset()</a>
+						<a id="btn22" href="javascript:">destroy()</a>
+						<a id="btn23" href="javascript:">download()</a>
+						<a id="btn24" href="javascript:">downloadAll()</a>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 logo-footer">
+						<div class="logo-bot"></div>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 copy">
+						<span>Copyright</span><i class="far fa-copyright"></i><span class="engo">2021 by Peng&Li</span>
+					</div>
+					<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gmail-footer">
+						<span id="gmail-footer"><br href="#">Email: peng6116@uwlax.edu</br>li4664@uwlax.edu</span>
+					</div>
+				</div>
+			</div>
+			<div class="hidden-lg hidden-md back-to-top fade"><i class="fas fa-caret-up"></i></div>
+			<div class="BG-menu"></div>
+		</footer>
+		<!-- boostrap & jquery -->
+
+		<script src="js/bootstrap.min_0028.js"></script>
+
+		<!-- js file -->
+		<script src="js/function-shop.js"></script>
+		<script src="js/function-back-top.js"></script>
+		<script src="js/function-sidebar.js"></script>
+		<script src="js/funtion-header-v3.js"></script>
+		<script src="js/function-search-v2.js"></script>
+		<script>
+			var email = sessionStorage.getItem('email');
+			$("#tbEmail").html(email);
+			function isEmpty(obj) {
+				if (typeof obj == "undefined" || obj == null || obj == "") {
+					return true;
+				} else {
+					return false;
+				}
+			}
+			
+			function test(i) {
+				alert(i);
+			}
+			
+			function videoPlay(index) {
+				var url = "http://127.0.0.1:8000"+files[index];
+				window.location.href="play.html?url="+url;
+			}
+			
+			function collect(id) {
+				var url = "http://127.0.0.1:8000/collect/";
+				var mid = sessionStorage.getItem('mid');
+				var hd = id;
+				var dt = {
+					hid: hd,
+					mid: mid
+				};
+				$.ajax({
+					url: url,
+					type: "post",
+					data: dt,
+					success: (res) => {
+						console.log('ok')
+						if (res.code == 200) {
+							alert("Collect successfully.");
+						} else {
+							alert("Collect failed.");
+						}
+					},
+					error: (err) => {
+						alert("Collect failed.");
+					}
+				});
+			}
+
+			function deleteHistory(id) {
+				var r = confirm("Are you sure to delete this history?");
+				if (r == true) {
+					var url = "http://127.0.0.1:8000/deleteHistory/";
+					var dt = {
+						id: id
+					};
+					$.ajax({
+						url: url,
+						type: "post",
+						data: dt,
+						success: (res) => {
+							console.log('ok')
+							if (res.code == 200) {
+								alert("Delete successfully.");
+								window.location.href = 'history.html'
+							} else {
+								alert("Delete failed.");
+							}
+						},
+						error: (err) => {
+							alert("Delete failed.");
+						}
+					});
+				}
+				}
+
+			function deleteAllHistory() {
+				var r = confirm("Are you sure to delete all histories?");
+				if (r == true) {
+					var url = "http://127.0.0.1:8000/deleteAllHistory/";
+					var mid = sessionStorage.getItem('mid');
+					var dt = {
+						mid: mid
+					};
+					$.ajax({
+						url: url,
+						type: "post",
+						data: dt,
+						success: (res) => {
+							console.log('ok')
+							if (res.code == 200) {
+								alert("Delete successfully.");
+								window.location.href = 'history.html'
+							} else {
+								alert("Delete failed.");
+							}
+						},
+						error: (err) => {
+							alert("Delete failed.");
+						}
+					});
+				}
+			}
+			
+			function download(url) {
+				var xhr = new XMLHttpRequest();
+				xhr.open('GET', url, true); //get请求，请求地址，是否异步
+				xhr.responseType = "blob"; // 返回类型blob
+				xhr.onload = function() { // 请求完成处理函数
+					if (this.status === 200) {
+						var blob = this.response; // 获取返回值
+						var a = document.createElement('a');
+						a.download = 'data.doc';
+						a.href = window.URL.createObjectURL(blob);
+						a.click();
+					}
+				};
+				// 发送ajax请求
+				xhr.send();
+			}
+			var viewer;
+			
+			document.getElementById('btn1').onclick = function() {
+				viewer.show();
+			}
+			
+			document.getElementById('btn2').onclick = function() {
+				viewer.hide();
+			}
+			
+			document.getElementById('btn3').onclick = function() {
+				viewer.view();
+			}
+			
+			document.getElementById('btn4').onclick = function() {
+				viewer.next();
+			}
+			
+			document.getElementById('btn5').onclick = function() {
+				viewer.prev();
+			}
+			
+			document.getElementById('btn6').onclick = function() {
+				viewer.move(-10, 0);
+			}
+			
+			document.getElementById('btn7').onclick = function() {
+				viewer.moveTo(0, 0);
+			}
+			
+			document.getElementById('btn8').onclick = function() {
+				viewer.zoom(0.1);
+			}
+			
+			document.getElementById('btn9').onclick = function() {
+				viewer.zoomTo(1);
+			}
+			
+			document.getElementById('btn10').onclick = function() {
+				viewer.rotate(90);
+			}
+			
+			document.getElementById('btn11').onclick = function() {
+				viewer.rotateTo(180);
+			}
+			
+			document.getElementById('btn12').onclick = function() {
+				viewer.scale(-1);
+			}
+			
+			document.getElementById('btn13').onclick = function() {
+				viewer.scaleX(-1);
+			}
+			
+			document.getElementById('btn14').onclick = function() {
+				viewer.scaleY(-1);
+			}
+			
+			document.getElementById('btn15').onclick = function() {
+				viewer.play();
+			}
+			
+			document.getElementById('btn16').onclick = function() {
+				viewer.stop();
+			}
+			
+			document.getElementById('btn17').onclick = function() {
+				viewer.full();
+			}
+			
+			document.getElementById('btn18').onclick = function() {
+				viewer.exit();
+			}
+			
+			document.getElementById('btn19').onclick = function() {
+				viewer.tooltip();
+			}
+			
+			document.getElementById('btn20').onclick = function() {
+				viewer.toggle();
+			}
+			
+			document.getElementById('btn21').onclick = function() {
+				viewer.reset();
+			}
+			
+			document.getElementById('btn22').onclick = function() {
+				viewer.destroy();
+			}
+			document.getElementById('btn23').onclick = function() {
+			
+			}
+			document.getElementById('btn24').onclick = function() {
+				var prefix = "http://127.0.0.1:8000";
+				var index = 0;
+				for (var i = 0; i < files.length; i++) {
+					var url = prefix + files[i];
+					window.open(url);
+				}
+			}
+			function downloadAll(){
+				var prefix = "http://127.0.0.1:8000";
+				var index = 0;
+				for (var i = 0; i < files.length; i++) {
+					var url = prefix + files[i];
+					window.open(url);
+				}
+			}
+			function formatDate(datetime) {
+				var date = new Date(datetime); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+				var year = date.getFullYear();
+				month = ("0" + (date.getMonth() + 1)).slice(-2);
+				sdate = ("0" + date.getDate()).slice(-2);
+				hour = ("0" + date.getHours()).slice(-2);
+
+				var result = year + "-" + month + "-" + sdate;
+
+				return result;
+			}
+			
+			function getData2() {
+				page = 1;
+				_this.current = 1;
+				getDataEx(page);
+			}
+
+			var page = 1;
+			var current_time=null;
+			var files = new Array();
+			var names = new Array();
+			var _this;
+
+			function show(id){
+				viewer.index=id
+				viewer.show();
+			}
+
+			function getData(params) {
+				getDataEx(params.current);
+			}
+
+			function getDataEx(pg) {
+				page = pg;
+
+				var url = "http://127.0.0.1:8000/getMyHistory/";
+				var mid = sessionStorage.getItem('mid');
+				var sel = $("#times");
+				var val = sel.find('option:selected').val();
+				current_time=val
+
+				var dt = {
+					page: page,
+					pageSize: 5,
+					mid: mid,
+					time: val
+				};
+				$.ajax({
+					url: url,
+					type: "post",
+					data: dt,
+					success: (res) => {
+						console.log('ok')
+						$("#jq22").find("li").remove();
+						files = new Array();
+						names = new Array();
+						var prefix = "http://127.0.0.1:8000";
+						if (res.code == 200) {
+							var mid = sessionStorage.getItem('mid');
+							var ary = JSON.parse(res.data);
+							var ary2 = JSON.parse(res.date);
+							var sel = $("#times");
+							sel.empty();
+							sel.append( " <option  selected value> -- select date -- </option>");
+							for (var i = 0; i < ary2.length; i++) {
+								var obj = ary2[i];
+								var time = "<option value='" + obj + "'>" + obj + "</option>";
+								// times.append(obj);
+								sel.append(time);
+
+							}
+							sel.val(current_time)
+							var html = '';
+							for (var i = 0; i < ary.length; i++) {
+								var obj = ary[i];
+								if(obj.thumnail.indexOf("/") != 0){
+									obj.thumnail = "/"+ obj.thumnail;
+								}
+								var li = "<li id='" + obj.id + "'>";
+								var img = "<img src='" + prefix + obj.thumnail + "' width='120px' height='120px'>";
+								var h3 = "<h3>" + obj.name + "</h3>";
+								var btn = "<a href='" + prefix + obj.thumnail + "'><button class='btn' style='margin-top: 10px;'>download</button></a>";
+
+								var words=obj.destFilePath.split('/')
+								console.log(obj.destFilePath)
+								var video_url="http://wngcap88.intra.uwlax.edu/videos/"+words[words.length-1]
+								var btn6 = "<a href='" + video_url + "'><button class='btn' style='margin-top: 10px;'>download</button></a>";
+
+								if(obj.destFilePath.indexOf("/") != 0){
+									obj.destFilePath = "/"+ obj.destFilePath;
+								}
+								var vd = prefix + obj.destFilePath;
+								
+								// var btn3 = "<a style='margin-top: 10px;margin-left: 10px;' href='#' onclick='videoPlay("+
+								// vd+")'>play</a>";
+								files.push(obj.destFilePath);
+								names.push(obj.name);
+			
+								// }
+								var btn2 = "<button class='btn' style='margin-left: 10px;margin-top: 10px;' onclick='collect(" + obj.id +
+									")'>collect</button>";
+								var btn3 = "<button class='btn' style='margin-left: 10px;margin-top: 10px;' onclick='videoPlay(" + i + ")'>play</button>";
+								var btn4 = "<button class='btn' style='margin-left: 10px;margin-top: 10px;' onclick='show(" + i +")'>show</button>";
+								var btn5 = "<button class='btn' style='margin-left: 10px;margin-top: 10px;' onclick='deleteHistory(" + obj.id +
+									")'>delete</button>";
+								var end = "</li>";
+								var btns = btn6 + btn2 + btn3 + btn4 + btn5;
+								if(obj.category == "Image"){
+									btns = btn + btn2 + btn4 + btn5;
+								}
+								var content = li + img + h3 + btns + end;
+								html += '<tr><td>' + obj.id + '</td><td>' + img + '</td><td>' + obj.name + '</td><td>' + btns 
+								+'</td></tr>';
+								var msg = "<li><img data-original='" + obj.srcFilePath + "' src='" + obj.destFilePath + "'></li>";
+								$("#jq22").append(content);
+							}
+							if (viewer == null) {
+
+								viewer = new Viewer(document.getElementById('jq22'), {
+									url: 'data-original'
+								})
+
+							}
+
+
+							$('.tbody').html(html);
+							_this.setTotal(res.count);
+						} else {
+							alert("Failed to get data");
+						}
+					},
+					error: (err) => {
+						alert("Failed to get data");
+					}
+				});
+			}
+			// 设置tbody的html
+			function setTbody(arr) {
+				var html = '';
+				for (var i = 0; i < arr.length; i++) {
+					var item = arr[i];
+					html += '<tr><td>' + item.id + '</td><td>' + item.name + '</td><td>' + item.age + '</td></tr>';
+				}
+				$('.tbody').html(html);
+			}
+			
+			
+			(function($, window) {
+				/**
+				  opt: {
+					linkNum: 5,		// 中间按钮个数 		默认5
+					current: 1,		// 页面初始当前页 	默认1
+					size: 10,		// 每页显示的条数 	默认10
+					layout: 'total, prev, pager, next, jumper',	// 设置显示的内容		// 默认'total, prev, pager, next, jumper'
+					prevHtml: '&lt;',	// 上一页html	默认&lt;
+					nextHtml: '&gt;',	// 下一页html	默认&gt;
+					jump: fn 		// 跳转时执行方法 	必须
+				  }
+				  jump方法中获取当前页数this.current，获取显示条数this.current
+				  jump中必须调用this.setTotal(100)方法设置总页数
+				 */
+				function MyPaging(oPagingParent, opt) {
+					console.log(opt.current)
+					this.oPagingParent = oPagingParent; // 初始化分页的盒子
+					this.total = 0; // 总条数
+					this.totalPage = 0; // 总页数
+			
+					this.linkNum = opt.linkNum || 5; // 中间按钮个数
+					this.current = opt.current || 2; // 当前页
+					this.size = opt.size || 5; // 每页多少条
+					this.prevHtml = opt.prevHtml || '&lt;'; // 上一页html
+					this.nextHtml = opt.nextHtml || '&gt;'; // 下一页html
+			
+			
+					this.layout = ['total', '  prev', 'pager', 'next', 'jumper'];
+					if (opt.layout) {
+						this.layout = opt.layout.split(',');
+					}
+			
+					if (!opt.jump) {
+						return;
+					}
+					this.jump = opt.jump;
+			
+					this._init();
+				}
+				var prototype = {
+					_init: function() {
+						this.jump();
+					},
+			
+					// 设置总页数方法 调用设置html方法
+					setTotal: function(data) {
+						if (data >= 1) {
+							this.total = data;
+
+							this.totalPage = Math.ceil(this.total / this.size);
+			
+							this._setPagingHtml();
+						}
+					},
+			
+					// 设置html
+					_setPagingHtml: function() {
+						var html = '<div class="_my-paging-box">';
+						for (var iKey = 0; iKey < this.layout.length; iKey++) {
+							var key = this.layout[iKey].replace(/\s/g, '');
+			
+							// 总条数
+							if (key == 'total') {
+								if (this.total<=1){
+									html += '<div class="total pg-item"><span>' + this.total + '</span>item</div>';
+								}
+								else {
+									html += '<div class="total pg-item"><span>' + this.total + '</span>items</div>';
+								}
+							}
+			
+							// 总页数
+							if (key == 'totalPage') {
+								if (this.totalPage<=1) {
+									html += '<div class="sizes pg-item"><span>' + this.totalPage + '</span> page</div>'
+								}
+								else {
+									html += '<div class="sizes pg-item"><span>' + this.totalPage + '</span> pages</div>'
+								}
+							}
+			
+							// 上一条
+							if (key == 'prev') {
+								html += '<div class="link-btn prev pg-item' + (this.current == 1 ? ' disabled' : '') + '" data-current="prev">' +
+									this.prevHtml + '</div>';
+							}
+			
+							// 分页按钮
+							if (key == 'pager') {
+								html += '<ul class="link-list pg-item">';
+			
+			
+								var start = end = 0;
+								var sPager = ''
+								// 总页数小于按钮个数
+								if (this.totalPage <= this.linkNum) {
+									start = 1;
+									end = this.totalPage;
+									for (var i = 1; i <= this.totalPage; i++) {
+										sPager += '<li class="link-btn' + (this.current == i ? ' active' : '') + '" data-current="' + i + '">' + i +
+											'</li>';
+									}
+			
+									// 当前页小于2分之最大按钮数
+								} else if (this.current < Math.ceil(this.linkNum / 2)) {
+									start = 1;
+									end = this.linkNum;
+									for (var i = 1; i <= this.linkNum; i++) {
+										sPager += '<li class="link-btn' + (this.current == i ? ' active' : '') + '" data-current="' + i + '">' + i +
+											'</li>';
+									}
+			
+									// 当前页大于总条数减2分之最大按钮数
+								} else if (this.current > this.totalPage - Math.ceil(this.linkNum / 2)) {
+									start = this.totalPage - this.linkNum + 1;
+									end = this.totalPage;
+									for (var i = this.totalPage - this.linkNum + 1; i <= this.totalPage; i++) {
+										sPager += '<li class="link-btn' + (this.current == i ? ' active' : '') + '" data-current="' + i + '">' + i +
+											'</li>';
+									}
+			
+									// 其它
+								} else {
+									start = this.current - Math.ceil(this.linkNum / 2) + 1;
+									end = this.current - Math.ceil(this.linkNum / 2) + this.linkNum;
+									for (var i = 1; i <= this.linkNum; i++) {
+										var idx = this.current - Math.ceil(this.linkNum / 2) + i;
+										sPager += '<li class="link-btn' + (this.current == idx ? ' active' : '') + '" data-current="' + idx + '">' +
+											idx + '</li>';
+									}
+								}
+			
+								// 当前页大于按钮页一般及总页数大于按钮数
+								if (this.current > Math.ceil(this.linkNum / 2) && this.totalPage > this.linkNum) {
+									html += '<li class="link-btn" data-current="1">1</li>';
+									if (start > 2) {
+										html += '<li>···</li>';
+									}
+								}
+			
+								html += sPager;
+			
+								// 当前页小于按钮数一般并且总页数大于按钮数
+								if (this.current <= this.totalPage - Math.ceil(this.linkNum / 2) && this.totalPage > this.linkNum) {
+									if (end < this.totalPage - 1) {
+										html += '<li>···</li>';
+									}
+									html += '<li class="link-btn" data-current="' + this.totalPage + '">' + this.totalPage + '</li>';
+								}
+			
+								html += '</ul>';
+							}
+			
+							// 下一条
+							if (key == 'next') {
+								html += '<div class="link-btn next pg-item' + (this.current == this.totalPage ? ' disabled' : '') +
+									'" data-current="next">' + this.nextHtml + '</div>';
+							}
+			
+							// 跳输入框
+							if (key == 'jumper') {
+								html += '<div class="jumper pg-item"><span>Go</span><input type="text"><span>Page</span></div>';
+							}
+						}
+						html += '</div>';
+			
+						this.oPagingParent.html(html);
+						this._setPagingEvent(); //设置事件
+					},
+			
+					// 设置分页事件
+					_setPagingEvent: function() {
+						var _this = this;
+						var oMyPaging = this.oPagingParent.find('._my-paging-box');
+						var oLinkBtn = oMyPaging.find('.link-btn');
+						var oIpt = oMyPaging.find('.jumper input');
+			
+						// 按钮点击事件
+						oLinkBtn.on('click', function() {
+							var oTag = $(this);
+							var current = oTag.data('current');
+							var to = _this.current;
+			
+							if (current == 'prev') {
+								to = to > 1 ? to - 1 : 1;
+							} else if (current == 'next') {
+								to = to < _this.totalPage ? to + 1 : _this.totalPage;
+							} else {
+								to = current;
+							}
+			
+							if (to == _this.current) {
+								return;
+							}
+			
+							_this.current = to;
+							_this.jump();
+						})
+			
+						// 输入框回车事件
+						oIpt.on('keydown', function(event) {
+							var code = event.keyCode;
+			
+							if (code == 13) {
+								var to = $(this).val();
+			
+								if (!(to >= 1 && to <= _this.totalPage)) {
+									to = 1;
+								}
+			
+								_this.current = to;
+								_this.jump();
+							}
+						})
+					},
+				}
+				for (var i in prototype) {
+					MyPaging.prototype[i] = prototype[i];
+				}
+			
+			
+				$.fn.MyPaging = function(opt) {
+					new MyPaging(this, opt || {});
+				}
+			})(jQuery, window);
+			
+			// 初始化分页
+			$('.box2').MyPaging({
+				size: 5,
+				total: 0,
+				current: 1,
+				prevHtml: 'previous',
+				nextHtml: 'next',
+				layout: 'total, totalPage, prev, pager, next, jumper',
+				jump: function() {
+					_this = this;
+					getDataEx(_this.current);
+				}
+			});
+			
+		</script>
+	</body>
+</html>

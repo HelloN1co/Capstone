@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <!-- bootstrap vs fontawesome-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="css/style-homev3.css">
+    <link rel="stylesheet" type="text/css" href="css/style-res-v3.css">
+    <link rel="stylesheet" type="text/css" href="css/style-fix-nav.css">
+    <link rel="stylesheet" type="text/css" href="css/style-form-search-mobile.css">
+    <!-- slick -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css">
+    <!-- GG FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/uploadImg.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <script type="text/javascript" src="js/loading.js"></script>
+    <script type="text/javascript" src="js/uploadImg.js"></script>
+    <script type="text/javascript" src="js/updateimg.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        if (!sessionStorage.getItem('mid')) {
+            window.location.href = 'index.html';
+            alert("Please login first.")
+        }
+    </script>
+    <style>
+        .main {
+            width: 80%;
+            margin: auto;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .btn {
+            padding: 9px 18px;
+            background: #40AFFE;
+            color: #FFFFFF;
+            border-radius: 5px;
+        }
+
+        .upimg {
+            position: relative;
+            width: 160px;
+            height: 160px;
+            border-radius: 5px;
+            border: dashed #999999;
+            background: url(img/addimg.svg) no-repeat;
+            background-position: 62px;
+        }
+
+        .upimg input {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            opacity: 0;
+        }
+
+        #showui {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        #showui li {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        #showui li img.showimg {
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 6;
+        }
+
+        .showdiv {
+            position: absolute;
+            z-index: 9;
+            bottom: 0;
+            width: calc(100%);
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+            background: rgba(0, 0, 0, .6);
+        }
+
+        .showdiv img {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        #showui li:first-child img.left {
+            opacity: .6;
+            cursor: no-drop;
+        }
+
+        #showui li:last-child img.right {
+            opacity: .6;
+            cursor: no-drop;
+        }
+
+        .submitbutton {
+            background: #222;
+            color: #fff;
+            border-color: #222;
+            width: 130px;
+            padding: 0 25px;
+            line-height: 48px;
+            font: 700 16px/38px "Abril Fatface";
+            text-align: center;
+            display: inline-block;
+            transition: all .3s ease;
+            border: 1px solid #222;
+        }
+
+        .submitbutton:hover {
+            text-decoration: none;
+            background: #fff;
+            color: #222;
+        }
+
+        .info-text{
+		    visibility: hidden;
+		    opacity: 0;
+		    transition: opacity 1s;
+            padding: 5px;
+		    background-color: #2a2a2a;
+		    color: white;
+		    font-size: 12px;
+		    border-radius:5px;
+	    }
+
+	    .info-hover:hover .info-text{
+		    visibility: visible;
+		    padding: 5px;
+		    background-color: #2a2a2a;
+		    color: white;
+		    font-size: 12px;
+		    border-radius:5px;
+		    opacity: 0.8;
+	    }
+    </style>
+</head>
+<body>
+
+<header class="container" id="header-v3">
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-3 logo"><img src="img/logo.png" alt="holiwood"></div>
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 menu-mobile">
+            <div class=" collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav menu-main">
+                    <li class="wedding-menu"><a href="home.html">Home</a>
+                        <figure id="home-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+                    </li>
+                    <li class="wedding-menu"><a href="history.html">History</a>
+                        <figure id="shopping-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+                    </li>
+                    <li class="wedding-menu"><a href="collect.html">Collection</a>
+                        <figure id="shopping-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+                    </li>
+                    <li class="wedding-menu"><a href="center.html">Personal Center</a>
+                        <figure id="cart-1" class=" hidden-sm hidden-md hidden-xs"></figure>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-10 col-xs-9">
+            <ul class="nav navbar-nav navbar-right">
+                <li id="input-search" class="hidden-sm hidden-xs" style="margin-top: 17px;">
+                    <div id="tbEmail" style="margin-top: 15px;margin-right: 10px"></div>
+                </li>
+                <a href="index.html">
+                    <button style="margin-top: 20px" type="submit" onclick="function logout() {
+							sessionStorage.removeItem('mid');
+							sessionStorage.removeItem('email');
+						}
+						logout()" class="submitbutton">Logout
+                    </button>
+                </a>
+            </ul>
+        </div>
+        <div class="navbar-header mobile-menu">
+            <button type="button" class="navbar-toggle btn-menu-mobile" data-toggle="collapse" data-target="#myNavbar">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+</header>
+<main>
+    <div class="blog">
+        <div class="container">
+            <div class="row" style="margin-top: 250px;">
+                <div class="product-slick slider">
+                    <div class="product-slic" style="margin-left: calc( -100% - 45px)">
+                        <div class="upload-content" style="width: 1000px">
+                            <h3 style="align-items: start;display: flex;height: 40px">Images Upload<div class="info-hover" style="align-items: start;display: flex;">
+							<div style="display: inline-block;margin-bottom: -100px">
+								<img style="padding-left: 5px" src="img/info_icon.png"></div>
+							<div class="info-text" style="display: inline-block"><span style="text-transform: none">You can upload less than nine images each time, and less than 10MB each one.<br> Each image needs 30s~40s for detection. Please wait.</span></div> </div></h3>
+
+                            <div id="showimg">
+                                <ul id="showui">
+                                </ul>
+                                <div id="showinput">
+                                </div>
+                            </div>
+
+                            <div class="upimg">
+                                <input type="file" id="upgteimg" value="" multiple/>
+                            </div>
+
+                        </div>
+                        <button class="btn" id="submit" onclick="uploadImages();" style="margin-top: 20px;">Start
+                            Upload
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="blog">
+        <div class="container">
+            <div class="row" style="margin-top: 150px;">
+                <div class="product-slick slider">
+                    <div class="product-slic" style="margin-left: calc( -100% - 45px)">
+                        <div class="upload-content" style="width: 1000px">
+                        <div class="page-header">
+                            <h3 style="align-items: start;display: flex;height: 40px">Video Upload<div class="info-hover" style="align-items: start;display: flex;">
+							<div style="display: inline-block;margin-bottom: -100px">
+								<img style="padding-left: 5px" src="img/info_icon.png"></div>
+							<div class="info-text" style="display: inline-block"><span style="text-transform: none">You can upload one video each time, and less than 50MB.<br> Detection time depends on the size of video. Please wait.</span></div> </div></h3>
+                        </div>
+                        <input type="file" name="video" id="video" onchange="UpdateOnChange(this);"
+                               accept="video/MP4, vieo/3gp"/>
+                        <button class="btn" id="submit" onclick="uploadVideo();" style="margin-top: 20px;">Start
+                            Upload
+                        </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 logo-footer">
+                <div class="logo-bot"></div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 copy">
+                <span>Copyright</span><i class="far fa-copyright"></i><span class="engo">2021 by Peng&Li</span>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 gmail-footer">
+                <span id="gmail-footer"><br href="#">Email: peng6116@uwlax.edu</br>li4664@uwlax.edu</span>
+            </div>
+        </div>
+    </div>
+    <div class="hidden-lg hidden-md back-to-top fade"><i class="fas fa-caret-up"></i></div>
+    <div class="BG-menu"></div>
+</footer>
+
+<!-- boostrap & jquery -->
+<script src="js/jquery.min_af.js"></script>
+<script src="js/bootstrap.min_0028.js"></script>
+<script src="slick/slick.js" type="text/javascript" charset="utf-8"></script>
+<!-- js file -->
+<script src="js/function-time-counter.js"></script>
+<script src="js/function-slick.js"></script>
+<script src="js/function-input-number.js"></script>
+<script src="js/function-flower.js"></script>
+<script src="js/function-select-custom.js"></script>
+<script src="js/function-back-top.js"></script>
+<script src="js/function-sidebar.js"></script>
+<script src="js/funtion-header-v3.js"></script>
+<script src="js/function-search-v2.js"></script>
+<script>
+    var file;
+    var email = sessionStorage.getItem('email');
+    var WAIT_TIME=0
+    $("#tbEmail").html(email);
+
+    //建立可存取到file的url
+    function getObjectURL(file) {
+        var url = null;
+        if (window.createObjectURL != undefined) { // basic
+            url = window.createObjectURL(file);
+        } else if (window.URL != undefined) { // mozilla(firefox)
+            url = window.URL.createObjectURL(file);
+        } else if (window.webkitURL != undefined) { // webkit or chrome
+            url = window.webkitURL.createObjectURL(file);
+        }
+        return url;
+    }
+
+    function showDialog() {
+        initLoading({
+            type: "start",
+            content: "...",
+        });
+    }
+
+    function hideDialog() {
+        initLoading({
+            type: "stop",
+            content: "...",
+        });
+    }
+
+    function UpdateOnChange(obj) {
+        file = $("#video").get(0).files[0];
+    }
+
+    function isEmpty(obj) {
+        if (typeof obj == "undefined" || obj == null || obj == "") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function uploadImages() {
+        var mid = sessionStorage.getItem('mid');
+
+        var form_data = new FormData();
+
+        if (imgFile.length == 0) {
+            alert("Please select one or more images.");
+            WAIT_TIME=0
+            return;
+        }
+
+        for (var i = 0; i < imgFile.length; i++) {
+            form_data.append('files', imgFile[i], imgFile[i].name);
+        }
+
+        form_data.append('mid', mid);
+
+        var url = "http://127.0.0.1:8000/checkImage/";
+        showDialog();
+        if (imgFile.length==1)WAIT_TIME=40000
+        else if(imgFile.length>1) WAIT_TIME=40000+30000*(imgFile.length-1)
+        window.setTimeout(()=>hideDialog(),WAIT_TIME)
+        $.ajax({
+            url: url,
+            type: 'POST',
+            data: form_data,
+            processData: false, // tell jquery not to process the data
+            contentType: false, // tell jquery not to set contentType
+            success: function (callback) {
+                //
+                console.log('finish');
+                alert("The detection takes some time. Please check the results in the history later");
+            }
+        });
+    }
+
+    function uploadVideo() {
+        if (file == undefined) {
+            alert("Please select a video.");
+            WAIT_TIME=0
+            return;
+        }
+        if (file.size > 50 * 1024 * 1024) {
+            alert("Video cannot be greater than 50M.");
+            return;
+        }
+        var mid = sessionStorage.getItem('mid');
+        var form_data = new FormData();
+        form_data.append('file', file);
+        form_data.append('mid', mid);
+
+        //获取视频或者音频时长
+        var videofile = URL.createObjectURL(file);
+        //经测试，发现audio也可获取视频的时长
+        var audioElement = new Audio(videofile);
+        var duration;
+        audioElement.addEventListener("loadedmetadata", function (_event) {
+            duration = audioElement.duration;
+            console.log( "duration: ", duration);//单位：秒
+
+
+        showDialog();
+        WAIT_TIME= duration * 30000
+        window.setTimeout(()=>hideDialog(),WAIT_TIME)
+        $.ajax({
+            url: 'http://127.0.0.1:8000/checkVideo/',
+            type: 'POST',
+            data: form_data,
+            processData: false, // tell jquery not to process the data
+            contentType: false, // tell jquery not to set contentType
+            success: function (res) {
+                if (res.code == 200) {
+                    alert("The detection takes some time. Please check the results in the history later");
+                } else {
+                    alert("Upload failed");
+                }
+            }
+        });
+    });
+    }
+</script>
+</body>
+</html>
