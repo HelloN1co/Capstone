@@ -102,7 +102,7 @@ class YOLO(object):
             self.yolo_model = multi_gpu_model(self.yolo_model, gpus=self.gpu_num)
         boxes, scores, classes = yolo_eval(self.yolo_model.output, self.anchors,
                 len(self.class_names), self.input_image_shape,
-                score_threshold=self.score, iou_threshold=self.iou, letterbox_image = self.letterbox_image) #!!!!!!!!!!
+                score_threshold=self.score, iou_threshold=self.iou)
         return boxes, scores, classes
 
     # def detect_image(self, image):
@@ -321,13 +321,11 @@ def check_video(yolo, video_path, output_path=""):
     prev_time = timer()
     while True:
         return_value, frame = vid.read()
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         if return_value == False:
             break
         image = Image.fromarray(frame)
         image = yolo.detect_image(image)
         result = np.asarray(image)
-        result = cv2.cvtColor(result, cv2.COLOR_RGB2BGR)
         curr_time = timer()
         exec_time = curr_time - prev_time
         prev_time = curr_time
