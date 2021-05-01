@@ -102,7 +102,7 @@ class YOLO(object):
             self.yolo_model = multi_gpu_model(self.yolo_model, gpus=self.gpu_num)
         boxes, scores, classes = yolo_eval(self.yolo_model.output, self.anchors,
                 len(self.class_names), self.input_image_shape,
-                score_threshold=self.score, iou_threshold=self.iou)
+                score_threshold=self.score, iou_threshold=self.iou, letterbox_image = self.letterbox_image)
         return boxes, scores, classes
 
     # def detect_image(self, image):
